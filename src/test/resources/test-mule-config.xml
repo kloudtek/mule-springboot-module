@@ -1,0 +1,12 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:spring-boot-module="http://www.mulesoft.org/schema/mule/spring-boot-module"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/spring-boot-module http://www.mulesoft.org/schema/mule/spring-boot-module/current/mule-spring-boot-module.xsd">
+
+    <spring-boot-module:config name="config" appClass="com.kloudtek.mule.module.springboot.TestApp"/>
+
+    <flow name="sayHiFlow">
+        <spring-boot-module:cli config-ref="config" person="Doctor"/>
+    </flow>
+</mule>
